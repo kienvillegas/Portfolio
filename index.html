@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Portfolio</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="nav-container">
+        <div class="logo-container">
+          <a href="#home">
+            <img src="/assets/logo.png" alt="Logo" class="nav-logo" />
+          </a>
+        </div>
+        <ul class="nav-list-container">
+          <li><a href="#about">About</a></li>
+          <li><a href="#training">Training</a></li>
+          <li><a href="#project">Project</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="hero-section" id="home">
+        <div class="hero-content">
+          <h1 class="title">Hi! I'm Kien</h1>
+          <p class="sub-title"><i>Web Developer | Android Developer</i></p>
+        </div>
+        <button id="btn-contact-me">
+          <a href="#project">View Projects</a>
+        </button>
+      </div>
+      <div class="about-section" id="about">
+        <h1>About</h1>
+        <div class="about-content-container">
+          <img src="/assets/myPicture.png" alt="Portfolio Image" />
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi
+            repudiandae aliquid ducimus deleniti. Odit inventore autem ad
+            veniam, alias eum, asperiores culpa earum, accusantium placeat
+            voluptatibus exercitationem quod omnis delectus.
+          </p>
+        </div>
+      </div>
+      <div class="training-section" id="training">
+        <h1>Training</h1>
+        <div class="training-content-container">
+          <div class="training-item">
+            <div class="training-img-container">
+              <img
+                id="cert-img"
+                src="/assets/training_img/Certificate - Backend Development.JPG"
+                alt="Certificate"
+                class="certificate-img"
+                onclick="showModal(0)"
+              />
+            </div>
+            <div class="training-item-desc">
+              <p class="title">Backend Development</p>
+              <p class="duration">Duration: Sept 26 - Oct 12, 2022</p>
+              <div class="tech-stack">
+                Technologies Used:
+                <div class="tech">
+                  <img src="/assets/html.svg" alt="HTML" />
+                  <span class="tooltip-text">HTML</span>
+                </div>
+                <div class="tech">
+                  <img src="/assets/css.svg" alt="CSS" />
+                  <span class="tooltip-text">CSS</span>
+                </div>
+                <div class="tech">
+                  <img src="/assets/javascript.svg" alt="Javascript" />
+                  <span class="tooltip-text">Javascript</span>
+                </div>
+                <div class="tech">
+                  <img src="/assets/nodejs.svg" alt="Node JS" />
+                  <span class="tooltip-text">Node JS</span>
+                </div>
+                <div class="tech">
+                  <img src="/assets/express-js.svg" alt="Express JS" />
+                  <span class="tooltip-text">Express JS</span>
+                </div>
+                <div class="tech">
+                  <img src="/assets/mongodb.svg" alt="MongoDB" />
+                  <span class="tooltip-text">MongoDB</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="training-item">
+            <div class="training-img-container">
+              <img
+                id="cert-img"
+                src="/assets/training_img/Certificate - Javascript.PNG"
+                alt="Certificate"
+                class="certificate-img"
+                onclick="showModal(1)"
+              />
+            </div>
+            <div class="training-item-desc">
+              <p class="title">Javascript Programming</p>
+              <p class="duration">Duration: Mar 12 - 31, 2023</p>
+              <div class="tech-stack">
+                Technologies Used:
+                <img src="/assets/html.svg" alt="HTML" />
+                <img src="/assets/css.svg" alt="CSS" />
+                <img src="/assets/javascript.svg" alt="Javascript" />
+              </div>
+            </div>
+          </div>
+          <div class="training-item">
+            <div class="training-img-container">
+              <img
+                id="cert-img"
+                src="/assets/training_img/Certificate - Web Development.jpg"
+                alt="Certificate"
+                class="certificate-img"
+                onclick="showModal(2)"
+              />
+            </div>
+            <div class="training-item-desc">
+              <p class="title">Web Development</p>
+              <p class="duration">Duration: July 19 - 21, Aug 1 - 4, 2023</p>
+              <div class="tech-stack">
+                Technologies Used:
+                <img src="/assets/html.svg" alt="HTML" />
+                <img src="/assets/css.svg" alt="CSS" />
+                <img src="/assets/javascript.svg" alt="Javascript" />
+                <img src="/assets/bootstrap.svg" alt="Bootstrap" />
+                <img src="/assets/php.svg" alt="PHP" />
+                <img src="/assets/mysql.svg" alt="MySql" />
+              </div>
+            </div>
+          </div>
+          <div class="training-item">
+            <div class="training-img-container">
+              <img
+                id="cert-img"
+                src="/assets/training_img/Certificate - Python.jpg"
+                alt="Certificate"
+                class="certificate-img"
+                onclick="showModal(3)"
+              />
+            </div>
+            <div class="training-item-desc">
+              <p class="title">Python Programming</p>
+              <p class="duration">Duration: July 24 - Aug 4, 2023</p>
+              <div class="tech-stack">
+                Technologies Used:
+                <img src="/assets/python.svg" alt="Python" />
+              </div>
+            </div>
+          </div>
+          <div class="training-item">
+            <div class="training-img-container">
+              <img
+                id="cert-img"
+                src="/assets/training_img/Certificate - Data Science.jpg"
+                alt="Certificate"
+                class="certificate-img"
+                onclick="showModal(4)"
+              />
+            </div>
+            <div class="training-item-desc">
+              <p class="title">Data Science Track</p>
+              <p class="duration">Completed on: Mar 08, 2024</p>
+              <div class="tech-stack">
+                Technologies Used:
+                <img src="/assets/python.svg" alt="Python" />
+              </div>
+            </div>
+          </div>
+          <div class="training-item">
+            <div class="training-img-container">
+              <img
+                id="cert-img"
+                src="/assets/training_img/Certificate - Data Analytics.JPG"
+                alt="Certificate"
+                class="certificate-img"
+                onclick="showModal(5)"
+              />
+            </div>
+            <div class="training-item-desc">
+              <p class="title">Data Analytics</p>
+              <p class="duration">Duration: July 17 - July 3, 2024</p>
+              <div class="tech-stack">
+                Technologies Used:
+                <img src="/assets/excel.svg" alt="Excel" />
+                <img src="/assets/power-bi.svg" alt="Power BI" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="myModal" class="modal">
+          <img class="modal-content" id="modal-img" />
+        </div>
+      </div>
+      <div class="project-section" id="project">
+        <h1>Projects</h1>
+        <div class="project-content-container">
+          <div class="project-video-container">
+            <img src="/assets/arrow-left.svg" alt="arrow-left" id="prev" />
+            <video
+              muted
+              autoplay
+              class="project-video"
+              src="/assets/project-videos/apple-chase.mp4"
+            ></video>
+            <video
+              muted
+              autoplay
+              class="project-video"
+              src="/assets/project-videos/fittrack.mp4"
+            ></video>
+            <video
+              muted
+              autoplay
+              class="project-video"
+              src="/assets/project-videos/snapsoil.mp4"
+            ></video>
+            <img src="/assets/arrow-right.svg" alt="arrow-right" id="next" />
+          </div>
+          <div class="video-pagination">
+            <div class="page"></div>
+            <div class="page"></div>
+            <div class="page"></div>
+          </div>
+          <div class="projects-container">
+            <div class="project-item">
+              <div>
+                <img
+                  class="project-img"
+                  src="/assets/projects_img/apple_chase.png"
+                  alt="Project Image"
+                />
+              </div>
+              <div class="project-item-desc">
+                <p class="title">Apple Chase</p>
+                <p class="description">
+                  Description: Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit. Illum officia et autem atque repellendus non
+                  doloribus omnis dicta neque nihil maxime, consectetur commodi
+                  id aut laudantium, aliquam nam! Rem, et.
+                </p>
+                <div class="project-tech-stack">
+                  Technologies Used:
+                  <img src="/assets/html.svg" alt="HTML" />
+                  <img src="/assets/css.svg" alt="CSS" />
+                  <img src="/assets/javascript.svg" alt="Javascript" />
+                  <img src="/assets/bootstrap.svg" alt="Bootstrap" />
+                  <img src="/assets/nodejs.svg" alt="Node JS" />
+                  <img src="/assets/express-js.svg" alt="Express JS" />
+                  <img src="/assets/mongodb.svg" alt="MongoDB" />
+                </div>
+              </div>
+            </div>
+            <div class="project-item">
+              <img
+                class="project-img"
+                src="/assets/projects_img/fitness_tracker.png"
+                alt="Project Image"
+              />
+              <div class="project-item-desc">
+                <p class="title">Fitness Tracker</p>
+                <p class="description">
+                  Description: Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit. Voluptatibus quas facere iure obcaecati
+                  cumque perspiciatis possimus reiciendis dolores modi
+                  reprehenderit omnis est, in, cum deleniti eius sapiente.
+                  Neque, dicta distinctio.
+                </p>
+                <div class="project-tech-stack">
+                  Technologies Used:
+                  <img src="/assets/java.svg" alt="Java" />
+                </div>
+              </div>
+            </div>
+            <div class="project-item">
+              <img
+                class="project-img"
+                src="/assets/projects_img/snapsoil.png"
+                alt="Project Image"
+              />
+              <div class="project-item-desc">
+                <p class="title">SnapSoil</p>
+                <p class="description">
+                  Description: Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit. In illum aspernatur veritatis, mollitia
+                  molestiae unde. Ipsa dolore sunt quo doloribus voluptas odit
+                  inventore dolorum magni! Earum delectus deserunt illo quas!
+                </p>
+                <div class="project-tech-stack">
+                  Technologies Used:
+                  <img src="/assets/java.svg" alt="Java" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-section" id="contact">
+        <h1>Contact</h1>
+        <div class="contact-content-container">
+          <div class="contacts-list">
+            <div class="contacts-item">
+              <div class="img-container">
+                <img src="/assets/icons/github.svg" alt="GitHub" />
+              </div>
+              <a href="https://github.com/kienvillegas">kien.dev</a>
+            </div>
+            <div class="contacts-item">
+              <div class="img-container">
+                <img src="/assets/icons/linkedin.svg" alt="LinkedIn" />
+              </div>
+              <a
+                href="https://www.linkedin.com/in/john-kien-villegas-344206246/"
+                >John Kien Villegas</a
+              >
+            </div>
+            <div class="contacts-item">
+              <div class="img-container">
+                <img src="/assets/icons/twitter.svg" alt="X" />
+              </div>
+              <a href="https://x.com/jkiendev">@jkiendev </a>
+            </div>
+            <div class="contacts-item">
+              <div class="img-container">
+                <img src="/assets/icons/instagram.svg" alt="Instagram" />
+              </div>
+              <a href="https://www.instagram.com/kien.dev/?hl=en">kien.dev</a>
+            </div>
+            <div class="contacts-item">
+              <div class="img-container">
+                <img src="/assets/icons/mail.svg" alt="Email" />
+              </div>
+              <a href="#">villegaskien@gmail.com</a>
+            </div>
+            <div class="contacts-item">
+              <div class="img-container">
+                <img src="/assets/icons/facebook.svg" alt="Facebook" />
+              </div>
+              <a href="https://www.facebook.com/villegas.kien/"
+                >villegas.kien</a
+              >
+            </div>
+          </div>
+          <form action="">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" />
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" />
+            <label for="message">Message</label>
+            <textarea name="message" id="message"></textarea>
+            <input type="submit" name="submit" id="submit-form" />
+          </form>
+        </div>
+      </div>
+      <div class="footer-section">
+        <img src="/assets/logo.png" alt="Logo" class="footer-logo" />
+        <p class="footer-subtitle">
+          "Software like wine, takes time" - Joel Spolsky
+        </p>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
