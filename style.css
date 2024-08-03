@@ -128,7 +128,7 @@ ul li a:hover {
 
   /* HERO SECTION */
 
-  /* .hero-section {
+  .hero-section {
     height: 100vh;
     width: 100vw;
   }
@@ -145,7 +145,7 @@ ul li a:hover {
   #btn-contact-me {
     font-size: 0.7rem !important;
     padding: 0.5em 1em !important;
-  } */
+  }
 
   /* ABOUT SECTION */
 
