@@ -94,6 +94,14 @@ ul li a:hover {
 }
 
 @media (max-width: 600px) {
+  h1 {
+    font-size: 2.5rem !important;
+  }
+
+  p {
+    font-size: 0.8rem !important;
+  }
+
   .menu-toggle-label {
     display: block;
   }
@@ -128,7 +136,7 @@ ul li a:hover {
 
   /* HERO SECTION */
 
-  /* .hero-section {
+  .hero-section {
     height: 100vh;
     width: 100vw;
   }
@@ -145,18 +153,31 @@ ul li a:hover {
   #btn-contact-me {
     font-size: 0.7rem !important;
     padding: 0.5em 1em !important;
-  } */
+  }
 
   /* ABOUT SECTION */
 
-  /* .about-section {
+  .about-section {
     height: fit-content !important;
     width: 100vw;
     padding: 1em 0;
+    text-align: justify;
   }
 
-  .about-secton h1 {
-  } */
+  .about-content-container {
+    border: 1px solid red;
+    max-width: 50% !important;
+    height: auto;
+  }
+
+  .about-content-container img {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* TRAINING SECTION */
+
+  
 }
 /* ALL SECTIONS  */
 .hero-section,
