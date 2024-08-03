@@ -6,6 +6,8 @@ const btnPrev = document.getElementById("prev");
 const btnNext = document.getElementById("next");
 const style = getComputedStyle(document.body);
 const navigation = document.querySelectorAll(".nav-container a");
+const ul = document.querySelector(".nav-list-container");
+const menuToggle = document.getElementById("menu-toggle");
 
 handleNav();
 

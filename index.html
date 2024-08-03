@@ -4,12 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Portfolio</title>
   </head>
   <body>
     <div class="container">
-      <nav class="navbar nav-container">
+      <nav class="nav-container">
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+        <label for="menu-toggle" class="menu-toggle-label">
+          <i class="fa fa-bars"></i>
+        </label>
+
         <div class="logo-container">
           <a href="#home">
             <img src="/assets/logo.png" alt="Logo" class="nav-logo" />
@@ -272,7 +281,7 @@
                   </div>
                   <div class="tech">
                     <img src="/assets/bootstrap.svg" alt="Bootstrap" />
-                    <span class="tooltip-text">Boostrap</span>
+                    <span class="tooltip-text">Bootstrap</span>
                   </div>
                   <div class="tech">
                     <img src="/assets/nodejs.svg" alt="Node JS" />
