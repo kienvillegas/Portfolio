@@ -24,7 +24,7 @@ function handleSwipe() {
   let deltaX = touchEndX - touchStartX;
   let deltaY = touchEndY - touchEndY;
 
-  if (Math.abs(deltaX) > deltaY) {
+  if (Math.abs(deltaX) > Math.abs(deltaY)) {
     if (deltaX < 0) {
       console.log("Swiped Right");
       currentSlideIndex = incSlideIndex();
