@@ -14,7 +14,7 @@ let touchStartX = 0;
 let touchEndX = 0;
 let touchStartY = 0;
 let touchEndY = 0;
-const SWIPE_THRESHOLD = 50;
+const SWIPE_THRESHOLD = 100;
 
 handleNav();
 showVideo(currentSlideIndex);
