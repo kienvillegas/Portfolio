@@ -2,7 +2,7 @@ import TouchEvent from "./TouchEvent.js";
 
 const modal = document.getElementById("myModal");
 const modalImg = document.getElementById("modal-img");
-const images = document.getElementsByClassName("certificate-img");
+const images = document.querySelectorAll(".certificate-img");
 const btnPrev = document.getElementById("prev");
 const btnNext = document.getElementById("next");
 const style = getComputedStyle(document.body);
@@ -49,17 +49,18 @@ function handleNav() {
 }
 
 function showModal(index) {
+  console.log(index);
   modal.style.display = "block";
   updateModalContent(index);
-}
-
-function closeModal() {
-  modal.style.display = "none";
 }
 
 function updateModalContent(index) {
   const item = images[index];
   modalImg.src = item.src;
+}
+
+function closeModal() {
+  modal.style.display = "none";
 }
 
 function showVideo(index) {
@@ -92,6 +93,10 @@ modal.addEventListener("click", function (e) {
   }
 });
 
+images.forEach((img, index) => {
+  img.addEventListener("click", () => showModal(index));
+});
+
 btnNext.addEventListener("click", function () {
   if (currentSlideIndex < 2) {
     currentSlideIndex++;
@@ -115,4 +120,4 @@ projectVideo.addEventListener("touchstart", (event) => {
   touchEvent = new TouchEvent(event);
 });
 
-projectVideo.addEventListener("touchend", handleSwipe());
+projectVideo.addEventListener("touchend", handleSwipe);
