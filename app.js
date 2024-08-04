@@ -12,22 +12,29 @@ let pageIndex = 0;
 let touchEvent = null;
 let touchStartX = 0;
 let touchEndX = 0;
+const SWIPE_THRESHOLD = 50;
 
 handleNav();
 showVideo(currentSlideIndex);
 showPage(pageIndex);
 
 function handleSwipe() {
-  if (touchEndX < touchStartX) {
-    console.log("Swiped Right");
-    currentSlideIndex = incSlideIndex();
-    showVideo(currentSlideIndex);
-    showPage(currentSlideIndex);
-  } else if (touchEndX > touchStartX) {
-    console.log("Swiped Left");
-    currentSlideIndex = decSlideIndex();
-    showVideo(currentSlideIndex);
-    showPage(currentSlideIndex);
+  let horizontalDiff = Math.abs(touchEndX - touchstartX);
+
+  if (horizontalDiff > SWIPE_THRESHOLD) {
+    if (touchEndX < touchStartX) {
+      console.log("Swiped Right");
+
+      currentSlideIndex = incSlideIndex();
+      showVideo(currentSlideIndex);
+      showPage(currentSlideIndex);
+    } else if (touchEndX > touchStartX) {
+      console.log("Swiped Left");
+
+      currentSlideIndex = decSlideIndex();
+      showVideo(currentSlideIndex);
+      showPage(currentSlideIndex);
+    }
   }
 }
 
@@ -126,9 +133,11 @@ btnPrev.addEventListener("click", function () {
 projectVideos.forEach((video) => {
   video.addEventListener("touchstart", (event) => {
     touchStartX = event.changedTouches[0].screenX;
+    console.log("StartX: " + touchStartX);
   });
   video.addEventListener("touchend", (event) => {
     touchEndX = event.changedTouches[0].screenX;
+    console.log("EndX: " + touchStartX);
     handleSwipe();
   });
 });
