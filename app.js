@@ -1,5 +1,3 @@
-import TouchEvent from "./TouchEvent.js";
-
 const modal = document.getElementById("myModal");
 const modalImg = document.getElementById("modal-img");
 const images = document.querySelectorAll(".certificate-img");
@@ -21,9 +19,15 @@ showPage(pageIndex);
 
 function handleSwipe() {
   if (touchEndX < touchStartX) {
-    console.log("Swiped Left");
-  } else if (touchEnd > touchStartX) {
     console.log("Swiped Right");
+    currentSlideIndex = incSlideIndex();
+    showVideo(currentSlideIndex);
+    showPage(currentSlideIndex);
+  } else if (touchEndX > touchStartX) {
+    console.log("Swiped Left");
+    currentSlideIndex = decSlideIndex();
+    showVideo(currentSlideIndex);
+    showPage(currentSlideIndex);
   }
 }
 
