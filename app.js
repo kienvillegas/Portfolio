@@ -12,6 +12,8 @@ let pageIndex = 0;
 let touchEvent = null;
 let touchStartX = 0;
 let touchEndX = 0;
+let touchStartY = 0;
+let touchEndY = 0;
 const SWIPE_THRESHOLD = 50;
 
 handleNav();
@@ -19,18 +21,17 @@ showVideo(currentSlideIndex);
 showPage(pageIndex);
 
 function handleSwipe() {
-  let horizontalDiff = Math.abs(touchEndX - touchstartX);
+  let deltaX = touchEndX - touchStartX;
+  let deltaY = touchEndY - touchEndY;
 
-  if (horizontalDiff > SWIPE_THRESHOLD) {
-    if (touchEndX < touchStartX) {
+  if (Math.abs(deltaX) > deltaY && Math.abs(deltaX) > SWIPE_THRESHOLD) {
+    if (deltaX < 0) {
       console.log("Swiped Right");
-
       currentSlideIndex = incSlideIndex();
       showVideo(currentSlideIndex);
       showPage(currentSlideIndex);
-    } else if (touchEndX > touchStartX) {
+    } else {
       console.log("Swiped Left");
-
       currentSlideIndex = decSlideIndex();
       showVideo(currentSlideIndex);
       showPage(currentSlideIndex);
@@ -133,11 +134,11 @@ btnPrev.addEventListener("click", function () {
 projectVideos.forEach((video) => {
   video.addEventListener("touchstart", (event) => {
     touchStartX = event.changedTouches[0].screenX;
-    console.log("StartX: " + touchStartX);
+    touchStartY = event.changedTouches[0].screenY;
   });
   video.addEventListener("touchend", (event) => {
     touchEndX = event.changedTouches[0].screenX;
-    console.log("EndX: " + touchStartX);
+    touchEndY = event.changedTouches[0].screenY;
     handleSwipe();
   });
 });
