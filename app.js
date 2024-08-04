@@ -7,7 +7,7 @@ const btnPrev = document.getElementById("prev");
 const btnNext = document.getElementById("next");
 const style = getComputedStyle(document.body);
 const navigation = document.querySelectorAll(".nav-container a");
-const projectVideo = document.querySelector(".project-video");
+const projectVideos = document.querySelectorAll(".project-video");
 
 let currentSlideIndex = 0;
 let pageIndex = 0;
@@ -130,9 +130,9 @@ btnPrev.addEventListener("click", function () {
   showPage(currentSlideIndex);
 });
 
-projectVideo.addEventListener("touchstart", (event) => {
-  console.log(event);
-  touchEvent = new TouchEvent(event);
+projectVideos.forEach((video) => {
+  video.addEventListener("touchstart", (event) => {
+    touchEvent = new TouchEvent(event);
+  });
+  video.addEventListener("touchend", handleSwipe);
 });
-
-projectVideo.addEventListener("touchend", handleSwipe);
