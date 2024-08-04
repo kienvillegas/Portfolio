@@ -1,20 +1,41 @@
+import TouchEvent from "./TouchEvent.js";
+
 const modal = document.getElementById("myModal");
 const modalImg = document.getElementById("modal-img");
-let img = document.getElementById("cert-img");
 const images = document.getElementsByClassName("certificate-img");
 const btnPrev = document.getElementById("prev");
 const btnNext = document.getElementById("next");
 const style = getComputedStyle(document.body);
 const navigation = document.querySelectorAll(".nav-container a");
-const ul = document.querySelector(".nav-list-container");
-const menuToggle = document.getElementById("menu-toggle");
-
-handleNav();
+const projectVideo = document.querySelector(".project-video");
 
 let currentSlideIndex = 0;
 let pageIndex = 0;
+let touchEvent = null;
+
+handleNav();
 showVideo(currentSlideIndex);
 showPage(pageIndex);
+
+function handleSwipe(event) {
+  console.log(event);
+  if (!touchEvent) {
+    return;
+  }
+
+  touchEvent.setEndEvent(event);
+  if (touchEvent.isSwipeLeft) {
+    if (currentSlideIndex > 0) {
+      currentSlideIndex--;
+      console.log(currentSlideIndex);
+    }
+  } else if (touchEvent.isSwipeRight) {
+    currentSlideIndex++;
+    console.log(currentSlideIndex);
+  }
+  showVideo();
+  showPage();
+}
 
 function handleNav() {
   navigation.forEach((link) => {
@@ -37,7 +58,6 @@ function closeModal() {
 }
 
 function updateModalContent(index) {
-  console.log(images);
   const item = images[index];
   modalImg.src = item.src;
 }
@@ -89,3 +109,10 @@ btnPrev.addEventListener("click", function () {
   showVideo(currentSlideIndex);
   showPage(currentSlideIndex);
 });
+
+projectVideo.addEventListener("touchstart", (event) => {
+  console.log(event);
+  touchEvent = new TouchEvent(event);
+});
+
+projectVideo.addEventListener("touchend", handleSwipe());
