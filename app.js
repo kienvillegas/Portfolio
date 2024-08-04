@@ -25,16 +25,37 @@ function handleSwipe(event) {
 
   touchEvent.setEndEvent(event);
   if (touchEvent.isSwipeLeft) {
-    if (currentSlideIndex > 0) {
-      currentSlideIndex--;
-      console.log(currentSlideIndex);
-    }
+    console.log("LEFT");
+    currentSlideIndex = decSlideIndex();
+    showVideo(currentSlideIndex);
+    showPage(currentSlideIndex);
   } else if (touchEvent.isSwipeRight) {
-    currentSlideIndex++;
-    console.log(currentSlideIndex);
+    console.log("RIGHT");
+    currentSlideIndex = decSlideIndex();
+
+    showVideo(currentSlideIndex);
+    showPage(currentSlideIndex);
   }
-  showVideo();
-  showPage();
+}
+
+function incSlideIndex() {
+  if (currentSlideIndex < 3) {
+    currentSlideIndex++;
+    if (currentSlideIndex >= 3) {
+      currentSlideIndex = 0;
+    }
+  }
+  return currentSlideIndex;
+}
+
+function decSlideIndex() {
+  if (currentSlideIndex > -1) {
+    currentSlideIndex--;
+    if (currentSlideIndex <= -1) {
+      currentSlideIndex = 2;
+    }
+  }
+  return currentSlideIndex;
 }
 
 function handleNav() {
@@ -98,19 +119,13 @@ images.forEach((img, index) => {
 });
 
 btnNext.addEventListener("click", function () {
-  if (currentSlideIndex < 2) {
-    currentSlideIndex++;
-  }
-  console.log(currentSlideIndex);
+  currentSlideIndex = incSlideIndex();
   showVideo(currentSlideIndex);
   showPage(currentSlideIndex);
 });
 
 btnPrev.addEventListener("click", function () {
-  if (currentSlideIndex > 0) {
-    currentSlideIndex--;
-  }
-  console.log(currentSlideIndex);
+  currentSlideIndex = decSlideIndex();
   showVideo(currentSlideIndex);
   showPage(currentSlideIndex);
 });

@@ -40,7 +40,7 @@ export default class TouchEvent {
     }
     return null;
   }
-  sendEndEvent(endEvent) {
+  setEndEvent(endEvent) {
     this.endEvent = endEvent;
   }
 }
