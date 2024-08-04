@@ -12,29 +12,18 @@ const projectVideos = document.querySelectorAll(".project-video");
 let currentSlideIndex = 0;
 let pageIndex = 0;
 let touchEvent = null;
+let touchStartX = 0;
+let touchEndX = 0;
 
 handleNav();
 showVideo(currentSlideIndex);
 showPage(pageIndex);
 
-function handleSwipe(event) {
-  console.log(event);
-  if (!touchEvent) {
-    return;
-  }
-
-  touchEvent.setEndEvent(event);
-  if (touchEvent.isSwipeLeft) {
-    console.log("LEFT");
-    currentSlideIndex = decSlideIndex();
-    showVideo(currentSlideIndex);
-    showPage(currentSlideIndex);
-  } else if (touchEvent.isSwipeRight) {
-    console.log("RIGHT");
-    currentSlideIndex = decSlideIndex();
-
-    showVideo(currentSlideIndex);
-    showPage(currentSlideIndex);
+function handleSwipe() {
+  if (touchEndX < touchStartX) {
+    console.log("Swiped Left");
+  } else if (touchEnd > touchStartX) {
+    console.log("Swiped Right");
   }
 }
 
@@ -132,7 +121,10 @@ btnPrev.addEventListener("click", function () {
 
 projectVideos.forEach((video) => {
   video.addEventListener("touchstart", (event) => {
-    touchEvent = new TouchEvent(event);
+    touchStartX = event.changedTouches[0].screenX;
   });
-  video.addEventListener("touchend", handleSwipe);
+  video.addEventListener("touchend", (event) => {
+    touchEndX = event.changedTouches[0].screenX;
+    handleSwipe();
+  });
 });
