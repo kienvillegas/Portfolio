@@ -36,6 +36,8 @@ function handleSwipe() {
       showVideo(currentSlideIndex);
       showPage(currentSlideIndex);
     }
+  } else {
+    console.log("Vertical");
   }
 }
 
