@@ -528,7 +528,8 @@ form .input-group {
   align-items: start;
 }
 
-input,
+input[type="text"],
+input[type="email"],
 textarea {
   width: 100%;
   padding: 0.5em;
@@ -543,9 +544,11 @@ textarea {
 
 input[type="submit"] {
   width: 150px;
-  background-color: var(--primary-light);
+  background-color: var(--tertiary);
+  padding: 1em;
   border-radius: 50px;
-  border: 1px solid var(--primary-dark);
+  border: 1px solid var(--tertiary);
+  color: var(--primary-light);
 }
 
 label {
