@@ -725,17 +725,9 @@ textarea {
     display: none;
   }
 
-  .project-video-container {
-    height: fit-content !important;
-  }
-
   .project-video {
     width: 90vw !important;
-  }
-
-  .page {
-    width: 5px !important;
-    height: 5px !important;
+    height: auto !important;
   }
 
   .projects-container {
