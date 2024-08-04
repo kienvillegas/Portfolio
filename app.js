@@ -28,6 +28,8 @@ function handleSwipe() {
     Math.abs(deltaX) > Math.abs(deltaY) &&
     Math.abs(deltaX) > SWIPE_THRESHOLD
   ) {
+    alert("swiped horizontal");
+
     if (deltaX < 0) {
       console.log("Swiped Right");
       currentSlideIndex = incSlideIndex();
@@ -40,7 +42,7 @@ function handleSwipe() {
       showPage(currentSlideIndex);
     }
   } else {
-    console.log("Vertical");
+    alert("swiped vertically");
   }
 }
 
