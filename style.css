@@ -250,9 +250,9 @@ button a {
 }
 
 .tech-stack img {
-  width: 50px;
-  height: 50px;
-  object-fit: cover;
+  width: 40px;
+  height: 40px;
+  object-fit: scale-down;
   margin: 0.5em;
 }
 
@@ -759,6 +759,13 @@ textarea {
     font-size: 0.8rem !important;
   }
 
+  .tech-stack img {
+    width: 35px;
+    height: auto;
+    object-fit: scale-down;
+    margin: 0.5em;
+  }
+
   /* CONTACT SECTION */
 
   .contact-section {
@@ -902,6 +909,13 @@ textarea {
   .training-item-desc .duration,
   .tech-stack {
     font-size: 0.8rem !important;
+  }
+
+  .tech-stack img {
+    width: 35px !important;
+    height: auto !important;
+    object-fit: scale-down !important;
+    margin: 0.5em !important;
   }
 
   /* PROJECT SECTION */
