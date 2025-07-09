@@ -39,14 +39,6 @@ To run this project locally, follow these steps:
 - Open the portfolio in a web browser to view the projects and skills.
 - Navigate through the sections using the menu.
 
-## Contribution
-
-Contributions are welcome! If you would like to contribute to this project, please fork the repository and submit a pull request.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 ## Contact
 
 For any inquiries, please reach out via email.
